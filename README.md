@@ -25,6 +25,7 @@ PageKit is a developer-first content backend. It gives your website a Content AP
 |---------|-------------|
 | [`@arovi/pagekit-core`](./pagekit-typescript) | TypeScript client for the PageKit content API |
 | [`@arovi/pagekit-mcp`](./pagekit-mcp) | MCP server — let AI agents manage your content |
+| [`@arovi/pagekit-next`](./pagekit-next) | Next.js integration (server components, caching) |
 
 ## Quick Start
 
@@ -130,6 +131,7 @@ pagekit/
 ├── pagekit-typescript/  # @arovi/pagekit-core — TypeScript content client
 ├── pagekit-mcp/         # @arovi/pagekit-mcp — MCP server for AI agents
 ├── pagekit-cli/         # @arovi/pagekit-cli — CLI tooling
+├── pagekit-next/        # @arovi/pagekit-next — Next.js integration
 ├── pagekit-python/      # pagekit-core (PyPI) — Python content client
 ├── examples/
 │   └── next-blog/       # Example Next.js blog

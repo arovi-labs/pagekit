@@ -1,0 +1,49 @@
+{
+  "name": "@arovi/pagekit-next",
+  "version": "0.1.0",
+  "description": "Next.js integration for PageKit — server components, caching, and draft mode.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arovi-labs/pagekit.git",
+    "directory": "pagekit-next"
+  },
+  "homepage": "https://github.com/arovi-labs/pagekit#readme",
+  "bugs": {
+    "url": "https://github.com/arovi-labs/pagekit/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@arovi/pagekit-core": "^0.1.0"
+  },
+  "peerDependencies": {
+    "next": ">=14"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "next": "^15.0.0",
+    "typescript": "^5.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

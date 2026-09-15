@@ -2,6 +2,10 @@ packages:
   - "pagekit-typescript"
   - "pagekit-mcp"
   - "pagekit-cli"
+  - "pagekit-next"
 
 allowBuilds:
   esbuild: true
+
+minimumReleaseAgeExclude:
+  - '@arovi/pagekit-core@0.1.0'
