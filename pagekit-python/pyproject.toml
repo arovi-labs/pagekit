@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pagekit"
+name = "pagekit-core"
 version = "0.1.0"
 description = "Python client for the Pagekit content API"
 readme = "README.md"

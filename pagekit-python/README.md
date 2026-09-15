@@ -5,7 +5,7 @@ Python client for the [Pagekit](https://pagekit.app) content API.
 ## Installation
 
 ```bash
-pip install pagekit
+pip install pagekit-core
 ```
 
 ## Quick start
