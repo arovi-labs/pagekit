@@ -1,6 +1,6 @@
 {
   "name": "@arovi/pagekit-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CLI for PageKit — scaffold projects, manage content, and more.",
   "license": "MIT",
   "type": "module",
@@ -25,7 +25,8 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "pagekit",
