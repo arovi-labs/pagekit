@@ -89,12 +89,11 @@ Once CI passes, merge the PR. This triggers the **Release workflow** which:
 
 ```
 pagekit/
-├── packages/
-│   ├── sdk/          # @arovi/pagekit-core
-│   ├── mcp/          # @arovi/pagekit-mcp
-│   └── cli/          # @arovi/pagekit-cli
+├── pagekit-typescript/  # @arovi/pagekit-core
+├── pagekit-mcp/         # @arovi/pagekit-mcp
+├── pagekit-cli/         # @arovi/pagekit-cli
+├── pagekit-python/      # Python content client
 ├── examples/
-│   └── next-blog/
 ├── docs/
 └── .github/
 ```
@@ -104,7 +103,7 @@ pagekit/
 Each package has its own scripts:
 
 ```bash
-cd packages/sdk
+cd pagekit-typescript
 
 pnpm dev          # Watch mode
 pnpm build        # Build once
