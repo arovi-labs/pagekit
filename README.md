@@ -23,8 +23,8 @@ PageKit is a developer-first content backend. It gives your website a Content AP
 
 | Package | Description |
 |---------|-------------|
-| [`@arovi/pagekit-core`](./packages/sdk) | TypeScript client for the PageKit content API |
-| [`@arovi/pagekit-mcp`](./packages/mcp) | MCP server — let AI agents manage your content |
+| [`@arovi/pagekit-core`](./pagekit-typescript) | TypeScript client for the PageKit content API |
+| [`@arovi/pagekit-mcp`](./pagekit-mcp) | MCP server — let AI agents manage your content |
 
 ## Quick Start
 
@@ -127,13 +127,12 @@ pagekit.media.delete("media-id");
 
 ```
 pagekit/
-├── packages/
-│   ├── sdk/          # @arovi/pagekit-core — TypeScript content client
-│   ├── mcp/          # @arovi/pagekit-mcp — MCP server for AI agents
-│   ├── next/         # Next.js integration (coming soon)
-│   └── cli/          # CLI tooling (coming soon)
+├── pagekit-typescript/  # @arovi/pagekit-core — TypeScript content client
+├── pagekit-mcp/         # @arovi/pagekit-mcp — MCP server for AI agents
+├── pagekit-cli/         # @arovi/pagekit-cli — CLI tooling
+├── pagekit-python/      # pagekit-core (PyPI) — Python content client
 ├── examples/
-│   └── next-blog/    # Example Next.js blog
+│   └── next-blog/       # Example Next.js blog
 └── docs/
 ```
 
