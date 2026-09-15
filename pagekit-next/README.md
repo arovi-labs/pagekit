@@ -8,12 +8,23 @@ Next.js integration for [PageKit](https://github.com/arovi-labs/pagekit).
 npm install @arovi/pagekit-next
 ```
 
+## Setup
+
+Add your API key to `.env.local`:
+
+```
+PAGEKIT_API_KEY=pk_live_...
+PAGEKIT_API_URL=http://localhost:3000  # optional, defaults to hosted API
+```
+
+The `getPosts()`, `getPost()`, etc. functions read `PAGEKIT_API_KEY` automatically from the environment.
+
 ## Usage
 
 ### Server Components (App Router)
 
 ```tsx
-import { getPosts, getPost } from "@arovi/pagekit-next";
+import { getPosts } from "@arovi/pagekit-next";
 
 export default async function BlogPage() {
   const { data: posts } = await getPosts({ status: "published" });
@@ -50,7 +61,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 ```
 
-### Custom config
+### Multiple projects or custom config
 
 ```tsx
 import { createPageKit, getPosts } from "@arovi/pagekit-next";
@@ -63,14 +74,16 @@ const pagekit = createPageKit({
 const posts = await getPosts({}, pagekit);
 ```
 
-## Configuration
+## API
 
-Set environment variables in `.env.local`:
-
-```
-PAGEKIT_API_KEY=pk_live_...
-PAGEKIT_API_URL=http://localhost:3000  # optional
-```
+| Function | Description |
+|----------|-------------|
+| `getPosts(params?)` | List posts with filters |
+| `getPost({ id?, slug? })` | Get a single post |
+| `getAuthors()` | List authors |
+| `getCategories()` | List categories |
+| `getTags()` | List tags |
+| `createPageKit(config)` | Create a custom client instance |
 
 ## License
 
