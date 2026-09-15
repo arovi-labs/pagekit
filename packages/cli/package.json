@@ -1,7 +1,7 @@
 {
   "name": "@arovi/pagekit-cli",
   "version": "0.1.2",
-  "description": "CLI for PageKit — scaffold projects, manage content, and more.",
+  "description": "CLI for PageKit \u2014 scaffold projects, manage content, and more.",
   "license": "MIT",
   "type": "module",
   "bin": {
@@ -37,5 +37,14 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arovi-labs/pagekit.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/arovi-labs/pagekit#readme",
+  "bugs": {
+    "url": "https://github.com/arovi-labs/pagekit/issues"
   }
 }

@@ -13,6 +13,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      packages: write
       id-token: write
 
     steps:
@@ -31,7 +32,8 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Create Release PR or Publish
+      # Publish to npm
+      - name: Create Release PR or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
@@ -43,3 +45,29 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Publish to GitHub Packages
+      - name: Publish to GitHub Packages
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | npm login --scope=@arovi --registry=https://npm.pkg.github.com --auth-type=legacy
+          pnpm -r publish --access public --registry https://npm.pkg.github.com
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Create GitHub Release
+      - name: Create GitHub Release
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          npx changeset tag
+          TAGS=$(git tag --sort=-version:refname | head -n 10)
+          for TAG in $TAGS; do
+            if ! gh release view "$TAG" > /dev/null 2>&1; then
+              gh release create "$TAG" \
+                --title "$TAG" \
+                --generate-notes \
+                --verify-tag
+            fi
+          done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
