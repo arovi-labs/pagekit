@@ -18,7 +18,7 @@ API_KEY = "pk_test_123"
 
 @respx.mock
 def test_posts_list():
-    respx.get("https://api.pagekit.app/v1/posts").mock(
+    respx.get("https://api.pagekit.cc/v1/posts").mock(
         return_value=httpx.Response(200, json={"data": [], "pagination": {"page": 1, "limit": 10, "total": 0, "totalPages": 0, "hasNextPage": False, "hasPreviousPage": False}})
     )
     client = Pagekit(api_key=API_KEY)
@@ -30,7 +30,7 @@ def test_posts_list():
 
 @respx.mock
 def test_posts_get():
-    respx.get("https://api.pagekit.app/v1/posts/123").mock(
+    respx.get("https://api.pagekit.cc/v1/posts/123").mock(
         return_value=httpx.Response(200, json={"id": "123", "title": "Test", "slug": "test", "content": "", "status": "published", "createdAt": "2024-01-01", "updatedAt": "2024-01-01", "tags": [], "seo": {}})
     )
     client = Pagekit(api_key=API_KEY)
@@ -42,7 +42,7 @@ def test_posts_get():
 
 @respx.mock
 def test_posts_get_by_slug():
-    respx.get("https://api.pagekit.app/v1/posts/slug/hello").mock(
+    respx.get("https://api.pagekit.cc/v1/posts/slug/hello").mock(
         return_value=httpx.Response(200, json={"id": "1", "title": "Hello", "slug": "hello", "content": "", "status": "published", "createdAt": "2024-01-01", "updatedAt": "2024-01-01", "tags": [], "seo": {}})
     )
     client = Pagekit(api_key=API_KEY)
@@ -53,7 +53,7 @@ def test_posts_get_by_slug():
 
 @respx.mock
 def test_posts_create():
-    respx.post("https://api.pagekit.app/v1/posts").mock(
+    respx.post("https://api.pagekit.cc/v1/posts").mock(
         return_value=httpx.Response(200, json={"id": "new", "title": "New Post", "slug": "new-post", "content": "Hello", "status": "draft", "createdAt": "2024-01-01", "updatedAt": "2024-01-01", "tags": [], "seo": {}})
     )
     client = Pagekit(api_key=API_KEY)
@@ -64,7 +64,7 @@ def test_posts_create():
 
 @respx.mock
 def test_posts_update():
-    respx.patch("https://api.pagekit.app/v1/posts/123").mock(
+    respx.patch("https://api.pagekit.cc/v1/posts/123").mock(
         return_value=httpx.Response(200, json={"id": "123", "title": "Updated", "slug": "test", "content": "", "status": "draft", "createdAt": "2024-01-01", "updatedAt": "2024-01-01", "tags": [], "seo": {}})
     )
     client = Pagekit(api_key=API_KEY)
@@ -75,7 +75,7 @@ def test_posts_update():
 
 @respx.mock
 def test_posts_delete():
-    respx.delete("https://api.pagekit.app/v1/posts/123").mock(
+    respx.delete("https://api.pagekit.cc/v1/posts/123").mock(
         return_value=httpx.Response(204)
     )
     client = Pagekit(api_key=API_KEY)
@@ -85,7 +85,7 @@ def test_posts_delete():
 
 @respx.mock
 def test_authors_list():
-    respx.get("https://api.pagekit.app/v1/authors").mock(
+    respx.get("https://api.pagekit.cc/v1/authors").mock(
         return_value=httpx.Response(200, json={"data": [], "pagination": {"page": 1, "limit": 10, "total": 0, "totalPages": 0, "hasNextPage": False, "hasPreviousPage": False}})
     )
     client = Pagekit(api_key=API_KEY)
@@ -96,7 +96,7 @@ def test_authors_list():
 
 @respx.mock
 def test_authors_get():
-    respx.get("https://api.pagekit.app/v1/authors/a1").mock(
+    respx.get("https://api.pagekit.cc/v1/authors/a1").mock(
         return_value=httpx.Response(200, json={"id": "a1", "name": "Alice"})
     )
     client = Pagekit(api_key=API_KEY)
@@ -107,7 +107,7 @@ def test_authors_get():
 
 @respx.mock
 def test_categories_list():
-    respx.get("https://api.pagekit.app/v1/categories").mock(
+    respx.get("https://api.pagekit.cc/v1/categories").mock(
         return_value=httpx.Response(200, json={"data": [], "pagination": {"page": 1, "limit": 10, "total": 0, "totalPages": 0, "hasNextPage": False, "hasPreviousPage": False}})
     )
     client = Pagekit(api_key=API_KEY)
@@ -118,7 +118,7 @@ def test_categories_list():
 
 @respx.mock
 def test_categories_get_by_slug():
-    respx.get("https://api.pagekit.app/v1/categories/engineering").mock(
+    respx.get("https://api.pagekit.cc/v1/categories/engineering").mock(
         return_value=httpx.Response(200, json={"id": "c1", "name": "Engineering", "slug": "engineering"})
     )
     client = Pagekit(api_key=API_KEY)
@@ -129,7 +129,7 @@ def test_categories_get_by_slug():
 
 @respx.mock
 def test_tags_list():
-    respx.get("https://api.pagekit.app/v1/tags").mock(
+    respx.get("https://api.pagekit.cc/v1/tags").mock(
         return_value=httpx.Response(200, json={"data": [], "pagination": {"page": 1, "limit": 10, "total": 0, "totalPages": 0, "hasNextPage": False, "hasPreviousPage": False}})
     )
     client = Pagekit(api_key=API_KEY)
@@ -140,7 +140,7 @@ def test_tags_list():
 
 @respx.mock
 def test_media_list():
-    respx.get("https://api.pagekit.app/v1/media").mock(
+    respx.get("https://api.pagekit.cc/v1/media").mock(
         return_value=httpx.Response(200, json={"data": [], "pagination": {"page": 1, "limit": 10, "total": 0, "totalPages": 0, "hasNextPage": False, "hasPreviousPage": False}})
     )
     client = Pagekit(api_key=API_KEY)
@@ -151,7 +151,7 @@ def test_media_list():
 
 @respx.mock
 def test_media_create():
-    respx.post("https://api.pagekit.app/v1/media").mock(
+    respx.post("https://api.pagekit.cc/v1/media").mock(
         return_value=httpx.Response(200, json={"id": "m1", "url": "https://example.com/img.png", "filename": "img.png", "mimeType": "image/png", "size": 1024})
     )
     client = Pagekit(api_key=API_KEY)
@@ -162,7 +162,7 @@ def test_media_create():
 
 @respx.mock
 def test_media_delete():
-    respx.delete("https://api.pagekit.app/v1/media/m1").mock(
+    respx.delete("https://api.pagekit.cc/v1/media/m1").mock(
         return_value=httpx.Response(204)
     )
     client = Pagekit(api_key=API_KEY)
@@ -172,7 +172,7 @@ def test_media_delete():
 
 @respx.mock
 def test_error_response():
-    respx.get("https://api.pagekit.app/v1/posts/999").mock(
+    respx.get("https://api.pagekit.cc/v1/posts/999").mock(
         return_value=httpx.Response(404, json={"error": {"message": "Not found", "code": "not_found"}})
     )
     client = Pagekit(api_key=API_KEY)

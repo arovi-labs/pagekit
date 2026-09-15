@@ -1,6 +1,6 @@
 # pagekit
 
-Python client for the [Pagekit](https://pagekit.app) content API.
+Python client for the [Pagekit](https://pagekit.cc) content API.
 
 ## Installation
 
@@ -42,7 +42,7 @@ posts = await client.posts.list()
 ```python
 client = Pagekit(
     api_key="pk_live_...",
-    base_url="https://api.pagekit.app/v1",  # default
+    base_url="https://api.pagekit.cc/v1",  # default
     timeout=30,                               # seconds
     headers={"X-Custom": "value"},            # extra headers
 )

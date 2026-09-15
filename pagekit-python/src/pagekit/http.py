@@ -6,7 +6,7 @@ import httpx
 
 from .errors import PagekitError
 
-DEFAULT_BASE_URL = "https://api.pagekit.app/v1"
+DEFAULT_BASE_URL = "https://api.pagekit.cc/v1"
 
 
 class HttpClient(Protocol):
