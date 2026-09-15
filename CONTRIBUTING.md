@@ -40,7 +40,7 @@ pnpm install
 # Build and verify
 pnpm build
 pnpm typecheck
-pnpm test  # in packages/sdk
+pnpm --filter @arovi/pagekit-core test
 ```
 
 ### 4. Create a Changeset

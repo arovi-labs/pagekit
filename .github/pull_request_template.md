@@ -13,6 +13,6 @@ Closes #<!-- issue number -->
 
 - [ ] Code builds (`pnpm build`)
 - [ ] Typecheck passes (`pnpm typecheck`)
-- [ ] Tests pass (`pnpm test`)
+- [ ] Tests pass (`pnpm --filter @arovi/pagekit-core test`)
 - [ ] README updated (if needed)
 - [ ] Changeset created (`pnpm changeset`)

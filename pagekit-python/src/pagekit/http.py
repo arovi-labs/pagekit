@@ -44,6 +44,18 @@ def _build_query(params: Any) -> dict[str, str]:
     return {k: str(v) for k, v in raw.items() if v is not None and v != ""}
 
 
+def _unwrap_type(ft: Any) -> Any:
+    """Unwrap Optional/Union types to get the inner dataclass type."""
+    import typing
+
+    origin = getattr(ft, "__origin__", None)
+    if origin is typing.Union:
+        args = [a for a in ft.__args__ if a is not type(None)]
+        if len(args) == 1:
+            return args[0]
+    return ft
+
+
 def _deserialize(data: dict[str, Any], cls: type) -> Any:
     if not isinstance(data, dict):
         return data
@@ -65,8 +77,9 @@ def _deserialize(data: dict[str, Any], cls: type) -> Any:
             import typing
 
             ft = typing.get_type_hints(cls).get(snake, f.type)
-        if dataclasses.is_dataclass(ft) and isinstance(raw, dict):
-            kwargs[snake] = _deserialize(raw, ft)
+        inner = _unwrap_type(ft)
+        if dataclasses.is_dataclass(inner) and isinstance(raw, dict):
+            kwargs[snake] = _deserialize(raw, inner)
         else:
             kwargs[snake] = raw
     return cls(**kwargs)
