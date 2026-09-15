@@ -30,7 +30,7 @@ PageKit is a developer-first content backend. It gives your website a Content AP
 ## Quick Start
 
 ```bash
-npm install @arovi/pagekit-core
+pnpm add @arovi/pagekit-core
 ```
 
 ```ts
@@ -67,7 +67,7 @@ await pagekit.posts.delete("post-id");
 PageKit exposes your content through [MCP](https://modelcontextprotocol.io), so AI agents like Claude, Codex, and Cursor can read and write your content directly.
 
 ```bash
-npm install -g @arovi/pagekit-mcp
+pnpm add -g @arovi/pagekit-mcp
 ```
 
 ```bash

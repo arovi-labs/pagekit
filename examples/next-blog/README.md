@@ -11,8 +11,8 @@ cp .env.example .env.local
 Set your `PAGEKIT_API_KEY` in `.env.local`, then:
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).

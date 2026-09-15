@@ -5,7 +5,7 @@ Next.js integration for [PageKit](https://github.com/arovi-labs/pagekit).
 ## Install
 
 ```bash
-npm install @arovi/pagekit-next
+pnpm add @arovi/pagekit-next
 ```
 
 ## Setup

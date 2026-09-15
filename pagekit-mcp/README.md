@@ -5,7 +5,7 @@ MCP server for [PageKit](https://github.com/arovi-labs/pagekit) — lets AI agen
 ## Install
 
 ```bash
-npm install -g @arovi/pagekit-mcp
+pnpm add -g @arovi/pagekit-mcp
 ```
 
 ## Usage

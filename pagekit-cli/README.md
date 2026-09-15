@@ -5,7 +5,7 @@ CLI tooling for [PageKit](https://github.com/arovi-labs/pagekit) — scaffold pr
 ## Install
 
 ```bash
-npm install -g @arovi/pagekit-cli
+pnpm add -g @arovi/pagekit-cli
 ```
 
 ## Usage

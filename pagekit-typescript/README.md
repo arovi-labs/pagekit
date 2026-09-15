@@ -5,7 +5,7 @@ TypeScript client for the [PageKit](https://github.com/arovi-labs/pagekit) conte
 ## Install
 
 ```bash
-npm install @arovi/pagekit-core
+pnpm add @arovi/pagekit-core
 ```
 
 ## Usage
