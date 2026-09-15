@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPost, getPosts } from "@/lib/pagekit";
+import { getPost } from "@arovi/pagekit-next";
 import ReactMarkdown from "react-markdown";
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPost(slug);
+  const post = await getPost({ slug });
   if (!post) return { title: "Not Found" };
 
   return {
@@ -24,14 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export async function generateStaticParams() {
-  const posts = await getPosts();
-  return posts.map((post) => ({ slug: post.slug }));
-}
-
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
-  const post = await getPost(slug);
+  const post = await getPost({ slug });
   if (!post) notFound();
 
   return (
@@ -76,13 +71,7 @@ export default async function PostPage({ params }: Props) {
           {post.category && <span>in {post.category.name}</span>}
         </div>
 
-        <div
-          style={{
-            fontSize: 18,
-            lineHeight: 1.8,
-            color: "#333",
-          }}
-        >
+        <div style={{ fontSize: 18, lineHeight: 1.8, color: "#333" }}>
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
       </article>

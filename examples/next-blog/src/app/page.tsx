@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getPosts } from "@/lib/pagekit";
+import { getPosts } from "@arovi/pagekit-next";
 
 export const metadata: Metadata = {
   title: "Blog — Powered by PageKit",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const posts = await getPosts();
+  const { data: posts } = await getPosts({ status: "published", sort: "-published_at" });
 
   return (
     <main style={{ maxWidth: 720, margin: "0 auto", padding: "80px 24px" }}>
