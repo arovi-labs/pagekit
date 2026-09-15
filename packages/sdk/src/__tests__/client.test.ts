@@ -3,16 +3,18 @@ import { Pagekit, DEFAULT_BASE_URL } from "../client";
 import { PagekitError } from "../errors";
 
 function mockFetch(response: Partial<Response> = {}) {
-  const defaults: Response = {
+  const defaults = {
     ok: true,
     status: 200,
+    statusText: "OK",
     headers: new Headers(),
     json: () => Promise.resolve({}),
     text: () => Promise.resolve(""),
-    clone: () => mockFetch(response) as unknown as Response,
+    clone: () => mockFetch(response),
     body: null,
     bodyUsed: false,
     arrayBuffer: () => Promise.resolve(new ArrayBuffer(0)),
+    bytes: () => Promise.resolve(new Uint8Array()),
     blob: () => Promise.resolve(new Blob()),
     formData: () => Promise.resolve(new FormData()),
     redirected: false,
