@@ -1,0 +1,39 @@
+{
+  "name": "@arovi/pagekit-cli",
+  "version": "0.1.0",
+  "description": "CLI for PageKit — scaffold projects, manage content, and more.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "pagekit": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/prompts": "^2.4.9",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "pagekit",
+    "cli",
+    "cms",
+    "scaffold",
+    "blog"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
