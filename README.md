@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/status-alpha-orange" alt="Status">
-  <img src="https://img.shields.io/npm/l/pagekit" alt="License">
-  <img src="https://img.shields.io/npm/v/pagekit" alt="npm version">
+  <img src="https://img.shields.io/npm/l/@arovi/pagekit-core" alt="License">
+  <img src="https://img.shields.io/npm/v/@arovi/pagekit-core" alt="npm version">
 </p>
 
 <h1 align="center">PageKit</h1>
@@ -23,17 +23,17 @@ PageKit is a developer-first content backend. It gives your website a Content AP
 
 | Package | Description |
 |---------|-------------|
-| [`@pagekit/sdk`](./packages/sdk) | TypeScript client for the PageKit content API |
-| [`@pagekit/mcp`](./packages/mcp) | MCP server — let AI agents manage your content |
+| [`@arovi/pagekit-core`](./packages/sdk) | TypeScript client for the PageKit content API |
+| [`@arovi/pagekit-mcp`](./packages/mcp) | MCP server — let AI agents manage your content |
 
 ## Quick Start
 
 ```bash
-npm install @pagekit/sdk
+npm install @arovi/pagekit-core
 ```
 
 ```ts
-import { Pagekit } from "@pagekit/sdk";
+import { Pagekit } from "@arovi/pagekit-core";
 
 const pagekit = new Pagekit({
   apiKey: process.env.PAGEKIT_API_KEY,
@@ -66,11 +66,11 @@ await pagekit.posts.delete("post-id");
 PageKit exposes your content through [MCP](https://modelcontextprotocol.io), so AI agents like Claude, Codex, and Cursor can read and write your content directly.
 
 ```bash
-npm install @pagekit/mcp
+npm install -g @arovi/pagekit-mcp
 ```
 
 ```bash
-PAGEKIT_API_KEY=pk_live_... npx @pagekit/mcp
+PAGEKIT_API_KEY=pk_live_... pagekit-mcp
 ```
 
 Then in Claude or Cursor:
@@ -128,8 +128,8 @@ pagekit.media.delete("media-id");
 ```
 pagekit/
 ├── packages/
-│   ├── sdk/          # @pagekit/sdk — TypeScript content client
-│   ├── mcp/          # @pagekit/mcp — MCP server for AI agents
+│   ├── sdk/          # @arovi/pagekit-core — TypeScript content client
+│   ├── mcp/          # @arovi/pagekit-mcp — MCP server for AI agents
 │   ├── next/         # Next.js integration (coming soon)
 │   └── cli/          # CLI tooling (coming soon)
 ├── examples/

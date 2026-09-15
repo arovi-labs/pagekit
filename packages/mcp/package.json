@@ -1,5 +1,5 @@
 {
-  "name": "@pagekit/mcp",
+  "name": "@arovi/pagekit-mcp",
   "version": "1.0.0",
   "description": "MCP server for Pagekit blog CMS — lets AI agents manage posts, tags, categories, authors, and media.",
   "type": "module",
