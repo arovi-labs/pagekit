@@ -3,6 +3,7 @@ packages:
   - "pagekit-mcp"
   - "pagekit-cli"
   - "pagekit-next"
+  - "pagekit-go"
 
 allowBuilds:
   esbuild: true
