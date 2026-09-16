@@ -24,13 +24,13 @@ type SEO struct {
 }
 
 type Author struct {
-	ID        string     `json:"id"`
-	Name      string     `json:"name"`
-	Email     *string    `json:"email,omitempty"`
-	Bio       *string    `json:"bio,omitempty"`
-	AvatarURL *string    `json:"avatarUrl,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
-	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
+	ID        string `json:"id"`
+	Name      string `json:"name"`
+	Email     *string `json:"email,omitempty"`
+	Bio       *string `json:"bio,omitempty"`
+	AvatarURL *string `json:"avatarUrl,omitempty"`
+	CreatedAt *int64  `json:"createdAt,omitempty"`
+	UpdatedAt *int64  `json:"updatedAt,omitempty"`
 }
 
 type AuthorRef struct {
@@ -58,15 +58,15 @@ type Tag struct {
 }
 
 type Media struct {
-	ID        string     `json:"id"`
-	URL       string     `json:"url"`
-	Filename  string     `json:"filename"`
-	MimeType  string     `json:"mimeType"`
-	Size      int64      `json:"size"`
-	Width     *int       `json:"width,omitempty"`
-	Height    *int       `json:"height,omitempty"`
-	Alt       *string    `json:"alt,omitempty"`
-	CreatedAt *time.Time `json:"createdAt,omitempty"`
+	ID        string  `json:"id"`
+	URL       string  `json:"url"`
+	Filename  string  `json:"filename"`
+	MimeType  string  `json:"mimeType"`
+	Size      int64   `json:"size"`
+	Width     *int    `json:"width,omitempty"`
+	Height    *int    `json:"height,omitempty"`
+	Alt       *string `json:"alt,omitempty"`
+	CreatedAt *int64  `json:"createdAt,omitempty"`
 }
 
 type Post struct {
@@ -77,14 +77,14 @@ type Post struct {
 	Excerpt      *string      `json:"excerpt"`
 	CoverImage   *string      `json:"coverImage"`
 	Status       PostStatus   `json:"status"`
-	PublishedAt  *time.Time   `json:"publishedAt"`
-	ScheduledFor *time.Time   `json:"scheduledFor"`
+	PublishedAt  *int64       `json:"publishedAt"`
+	ScheduledFor *int64       `json:"scheduledFor"`
 	Author       *AuthorRef   `json:"author"`
 	Category     *CategoryRef `json:"category"`
 	Tags         []string     `json:"tags"`
 	SEO          SEO          `json:"seo"`
-	CreatedAt    time.Time    `json:"createdAt"`
-	UpdatedAt    time.Time    `json:"updatedAt"`
+	CreatedAt    int64        `json:"createdAt"`
+	UpdatedAt    int64        `json:"updatedAt"`
 }
 
 type Pagination struct {
@@ -126,8 +126,8 @@ type PostCreateInput struct {
 	SEODescription *string     `json:"seoDescription,omitempty"`
 	CanonicalURL   *string     `json:"canonicalUrl,omitempty"`
 	OGImage        *string     `json:"ogImage,omitempty"`
-	PublishedAt    *time.Time  `json:"publishedAt,omitempty"`
-	ScheduledFor   *time.Time  `json:"scheduledFor,omitempty"`
+	PublishedAt    *int64      `json:"publishedAt,omitempty"`
+	ScheduledFor   *int64      `json:"scheduledFor,omitempty"`
 }
 
 type PostUpdateInput struct {

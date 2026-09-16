@@ -34,7 +34,7 @@ export function err(error: unknown): McpResult {
 // ── Markdown formatters ─────────────────────────────────────────────────
 
 export function postMarkdown(post: Record<string, unknown>): string {
-  const p = post as { id: string; title: string; slug: string; status: string; excerpt?: string; publishedAt?: string; createdAt: string; tags?: (string | { name: string })[]; author?: { name: string } | string; category?: { name: string } | string };
+  const p = post as { id: string; title: string; slug: string; status: string; excerpt?: string; publishedAt?: number | string; createdAt: number | string; tags?: (string | { name: string })[]; author?: { name: string } | string; category?: { name: string } | string };
   
   // Normalize tags to string array
   const tags = p.tags?.map(t => typeof t === "string" ? t : t.name) ?? [];

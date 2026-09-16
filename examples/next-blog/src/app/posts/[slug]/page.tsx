@@ -61,7 +61,7 @@ export default async function PostPage({ params }: Props) {
           {post.author && <span>{post.author.name}</span>}
           {post.publishedAt && (
             <span>
-              {new Date(post.publishedAt).toLocaleDateString("en-US", {
+              {new Date(typeof post.publishedAt === "number" ? (post.publishedAt < 1e11 ? post.publishedAt * 1000 : post.publishedAt) : post.publishedAt).toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",
                 year: "numeric",

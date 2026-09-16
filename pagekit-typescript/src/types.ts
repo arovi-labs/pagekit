@@ -13,8 +13,8 @@ export interface Author {
   email?: string | null;
   bio?: string | null;
   avatarUrl?: string | null;
-  createdAt?: string;
-  updatedAt?: string;
+  createdAt?: number;
+  updatedAt?: number;
 }
 
 export interface Category {
@@ -39,7 +39,7 @@ export interface Media {
   width?: number | null;
   height?: number | null;
   alt?: string | null;
-  createdAt?: string;
+  createdAt?: number;
 }
 
 /** Shape returned by the API — matches PRD §17. */
@@ -51,14 +51,14 @@ export interface Post {
   excerpt: string | null;
   coverImage: string | null;
   status: PostStatus;
-  publishedAt: string | null;
-  scheduledFor: string | null;
+  publishedAt: number | null;
+  scheduledFor: number | null;
   author: Pick<Author, "id" | "name"> | null;
   category: Pick<Category, "id" | "name" | "slug"> | null;
   tags: string[];
   seo: Seo;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: number;
+  updatedAt: number;
 }
 
 export interface Pagination {
@@ -101,8 +101,8 @@ export interface PostCreateInput {
   seoDescription?: string;
   canonicalUrl?: string;
   ogImage?: string;
-  publishedAt?: string;
-  scheduledFor?: string;
+  publishedAt?: number;
+  scheduledFor?: number;
 }
 
 export type PostUpdateInput = Partial<PostCreateInput>;

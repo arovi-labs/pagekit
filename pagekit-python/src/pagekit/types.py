@@ -29,8 +29,8 @@ class Author:
     email: str | None = None
     bio: str | None = None
     avatar_url: str | None = None
-    created_at: str | None = None
-    updated_at: str | None = None
+    created_at: int | None = None
+    updated_at: int | None = None
 
 
 @dataclass
@@ -58,7 +58,7 @@ class Media:
     width: int | None = None
     height: int | None = None
     alt: str | None = None
-    created_at: str | None = None
+    created_at: int | None = None
 
 
 @dataclass
@@ -83,14 +83,14 @@ class Post:
     excerpt: str | None = None
     cover_image: str | None = None
     status: PostStatus = PostStatus.DRAFT
-    published_at: str | None = None
-    scheduled_for: str | None = None
+    published_at: int | None = None
+    scheduled_for: int | None = None
     author: AuthorRef | None = None
     category: CategoryRef | None = None
     tags: list[str] = field(default_factory=list)
     seo: Seo = field(default_factory=Seo)
-    created_at: str = ""
-    updated_at: str = ""
+    created_at: int = 0
+    updated_at: int = 0
 
 
 @dataclass
@@ -124,8 +124,8 @@ class PostCreateInput:
     seo_description: str | None = None
     canonical_url: str | None = None
     og_image: str | None = None
-    published_at: str | None = None
-    scheduled_for: str | None = None
+    published_at: int | None = None
+    scheduled_for: int | None = None
 
 
 @dataclass
@@ -143,8 +143,8 @@ class PostUpdateInput:
     seo_description: str | None = None
     canonical_url: str | None = None
     og_image: str | None = None
-    published_at: str | None = None
-    scheduled_for: str | None = None
+    published_at: int | None = None
+    scheduled_for: int | None = None
 
 
 @dataclass

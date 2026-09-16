@@ -8,7 +8,7 @@ import (
 )
 
 func TestPosts_List(t *testing.T) {
-	now := time.Now()
+	now := time.Now().Unix()
 	ts, client := newTestServer(func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, r, "GET")
 		assertPath(t, r, "/posts")
@@ -76,7 +76,7 @@ func TestPosts_ListWithParams(t *testing.T) {
 }
 
 func TestPosts_Get(t *testing.T) {
-	now := time.Now()
+	now := time.Now().Unix()
 	ts, client := newTestServer(func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, r, "GET")
 		assertPath(t, r, "/posts/post_123")
@@ -98,7 +98,7 @@ func TestPosts_Get(t *testing.T) {
 }
 
 func TestPosts_GetBySlug(t *testing.T) {
-	now := time.Now()
+	now := time.Now().Unix()
 	ts, client := newTestServer(func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, r, "GET")
 		assertPath(t, r, "/posts/slug/hello-world")
@@ -120,7 +120,7 @@ func TestPosts_GetBySlug(t *testing.T) {
 }
 
 func TestPosts_Create(t *testing.T) {
-	now := time.Now()
+	now := time.Now().Unix()
 	ts, client := newTestServer(func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, r, "POST")
 		assertPath(t, r, "/posts")
@@ -152,7 +152,7 @@ func TestPosts_Create(t *testing.T) {
 }
 
 func TestPosts_Update(t *testing.T) {
-	now := time.Now()
+	now := time.Now().Unix()
 	ts, client := newTestServer(func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, r, "PATCH")
 		assertPath(t, r, "/posts/post_123")

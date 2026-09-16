@@ -31,7 +31,7 @@ def test_posts_list():
 @respx.mock
 def test_posts_get():
     respx.get("https://api.pagekit.cc/v1/posts/123").mock(
-        return_value=httpx.Response(200, json={"id": "123", "title": "Test", "slug": "test", "content": "", "status": "published", "createdAt": "2024-01-01", "updatedAt": "2024-01-01", "tags": [], "seo": {}})
+        return_value=httpx.Response(200, json={"id": "123", "title": "Test", "slug": "test", "content": "", "status": "published", "createdAt": 1704067200, "updatedAt": 1704067200, "tags": [], "seo": {}})
     )
     client = Pagekit(api_key=API_KEY)
     post = client.posts.get("123")
@@ -43,7 +43,7 @@ def test_posts_get():
 @respx.mock
 def test_posts_get_by_slug():
     respx.get("https://api.pagekit.cc/v1/posts/slug/hello").mock(
-        return_value=httpx.Response(200, json={"id": "1", "title": "Hello", "slug": "hello", "content": "", "status": "published", "createdAt": "2024-01-01", "updatedAt": "2024-01-01", "tags": [], "seo": {}})
+        return_value=httpx.Response(200, json={"id": "1", "title": "Hello", "slug": "hello", "content": "", "status": "published", "createdAt": 1704067200, "updatedAt": 1704067200, "tags": [], "seo": {}})
     )
     client = Pagekit(api_key=API_KEY)
     post = client.posts.get_by_slug("hello")
@@ -54,7 +54,7 @@ def test_posts_get_by_slug():
 @respx.mock
 def test_posts_create():
     respx.post("https://api.pagekit.cc/v1/posts").mock(
-        return_value=httpx.Response(200, json={"id": "new", "title": "New Post", "slug": "new-post", "content": "Hello", "status": "draft", "createdAt": "2024-01-01", "updatedAt": "2024-01-01", "tags": [], "seo": {}})
+        return_value=httpx.Response(200, json={"id": "new", "title": "New Post", "slug": "new-post", "content": "Hello", "status": "draft", "createdAt": 1704067200, "updatedAt": 1704067200, "tags": [], "seo": {}})
     )
     client = Pagekit(api_key=API_KEY)
     post = client.posts.create(PostCreateInput(title="New Post", content="Hello"))
@@ -65,7 +65,7 @@ def test_posts_create():
 @respx.mock
 def test_posts_update():
     respx.patch("https://api.pagekit.cc/v1/posts/123").mock(
-        return_value=httpx.Response(200, json={"id": "123", "title": "Updated", "slug": "test", "content": "", "status": "draft", "createdAt": "2024-01-01", "updatedAt": "2024-01-01", "tags": [], "seo": {}})
+        return_value=httpx.Response(200, json={"id": "123", "title": "Updated", "slug": "test", "content": "", "status": "draft", "createdAt": 1704067200, "updatedAt": 1704067200, "tags": [], "seo": {}})
     )
     client = Pagekit(api_key=API_KEY)
     post = client.posts.update("123", PostUpdateInput(title="Updated"))

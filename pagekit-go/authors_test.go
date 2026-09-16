@@ -8,7 +8,7 @@ import (
 )
 
 func TestAuthors_List(t *testing.T) {
-	now := time.Now()
+	now := time.Now().Unix()
 	ts, client := newTestServer(func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, r, "GET")
 		assertPath(t, r, "/authors")
@@ -35,7 +35,7 @@ func TestAuthors_List(t *testing.T) {
 }
 
 func TestAuthors_Get(t *testing.T) {
-	now := time.Now()
+	now := time.Now().Unix()
 	ts, client := newTestServer(func(w http.ResponseWriter, r *http.Request) {
 		assertMethod(t, r, "GET")
 		assertPath(t, r, "/authors/author_1")

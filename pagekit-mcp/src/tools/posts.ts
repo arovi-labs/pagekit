@@ -103,7 +103,7 @@ Examples:
         seoTitle: z.string().optional().describe("Custom SEO title (overrides post title)"),
         seoDescription: z.string().optional().describe("SEO meta description"),
         canonicalUrl: z.string().url().optional().describe("Canonical URL for SEO"),
-        scheduledFor: z.string().optional().describe("ISO date string for scheduled publishing"),
+        scheduledFor: z.number().optional().describe("Unix timestamp in seconds for scheduled publishing"),
       },
       annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false },
     },
