@@ -14,8 +14,8 @@ export function registerTaxonomyTools(server: McpServer, api: PagekitClient) {
       description: `List all tags with post counts.
 
 Example:
-  pagekit_list_tags() — all tags
-  pagekit_list_tags({ search: "react" }) — filter by name`,
+  pagekit_list_tags() - all tags
+  pagekit_list_tags({ search: "react" }) - filter by name`,
       inputSchema: {
         search: z.string().optional().describe("Filter by tag name"),
         sort: z.enum(["name", "created_at"]).optional().describe("Sort field (default: name)"),

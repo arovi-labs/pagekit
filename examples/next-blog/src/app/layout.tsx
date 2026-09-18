@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Blog — Powered by PageKit",
+  title: "Blog - Powered by PageKit",
 };
 
 export default function RootLayout({

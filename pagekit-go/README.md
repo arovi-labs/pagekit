@@ -38,7 +38,7 @@ func main() {
     }
 
     for _, post := range posts.Data {
-        fmt.Printf("%s — %s\n", post.Title, post.Slug)
+        fmt.Printf("%s - %s\n", post.Title, post.Slug)
     }
 }
 ```

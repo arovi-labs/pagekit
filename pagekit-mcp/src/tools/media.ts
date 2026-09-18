@@ -14,8 +14,8 @@ export function registerMediaTools(server: McpServer, api: PagekitClient) {
       description: `List all media assets (images, files, videos).
 
 Example:
-  pagekit_list_media() — recent media
-  pagekit_list_media({ limit: 50 }) — more results`,
+  pagekit_list_media() - recent media
+  pagekit_list_media({ limit: 50 }) - more results`,
       inputSchema: {
         limit: z.number().int().min(1).max(100).default(20).describe("Max results"),
         offset: z.number().int().min(0).default(0).describe("Pagination offset"),
@@ -44,7 +44,7 @@ Example:
     {
       title: "Register Media",
       description: `Register an existing media asset (already uploaded to storage).
-This does NOT upload a file — it registers metadata for a file that already exists at a public URL.
+This does NOT upload a file - it registers metadata for a file that already exists at a public URL.
 
 Example:
   pagekit_create_media({

@@ -1,7 +1,7 @@
 {
   "name": "@arovi/pagekit-next",
   "version": "0.1.0",
-  "description": "Next.js integration for PageKit — server components, caching, and draft mode.",
+  "description": "Next.js integration for PageKit - server components, caching, and draft mode.",
   "license": "MIT",
   "repository": {
     "type": "git",

@@ -1,6 +1,21 @@
 import { Pagekit, type PagekitOptions, type Post, type Paginated } from "@arovi/pagekit-core";
 
-export type { Post, Paginated, Author, Category, Tag, Media, PostStatus, Seo } from "@arovi/pagekit-core";
+export type {
+  Post,
+  Paginated,
+  Author,
+  Category,
+  Tag,
+  Media,
+  Webhook,
+  Domain,
+  Subscriber,
+  Campaign,
+  AnalyticsStats,
+  Notification,
+  PostStatus,
+  Seo,
+} from "@arovi/pagekit-core";
 
 export interface PageKitConfig extends Omit<PagekitOptions, "fetch"> {}
 
@@ -58,4 +73,19 @@ export async function getCategories(config?: PageKitConfig) {
 export async function getTags(config?: PageKitConfig) {
   const client = getClient(config);
   return client.tags.list();
+}
+
+export async function getWebhooks(config?: PageKitConfig) {
+  const client = getClient(config);
+  return client.webhooks.list();
+}
+
+export async function getDomains(config?: PageKitConfig) {
+  const client = getClient(config);
+  return client.domains.list();
+}
+
+export async function getSubscribers(config?: PageKitConfig) {
+  const client = getClient(config);
+  return client.subscribers.list();
 }

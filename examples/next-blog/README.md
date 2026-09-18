@@ -1,4 +1,4 @@
-# Next.js Blog — PageKit Example
+# Next.js Blog - PageKit Example
 
 A minimal blog powered by [PageKit](https://github.com/arovi-labs/pagekit).
 

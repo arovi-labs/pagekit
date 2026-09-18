@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getPosts } from "@arovi/pagekit-next";
 
 export const metadata: Metadata = {
-  title: "Blog — Powered by PageKit",
+  title: "Blog - Powered by PageKit",
   description: "A blog powered by PageKit, the content layer for your website.",
 };
 

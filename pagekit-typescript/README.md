@@ -61,11 +61,11 @@ await pagekit.posts.delete("post-id");
 import { Pagekit } from "@arovi/pagekit-core";
 
 const pagekit = new Pagekit({
-  apiKey: "pk_live_...",                           // Required — your API key
-  baseUrl: "https://api.pagekit.app/v1",          // Optional — defaults to hosted API
-  timeout: 30000,                                  // Optional — request timeout in ms
-  fetch: customFetch,                              // Optional — custom fetch implementation
-  headers: { "X-Custom-Header": "value" },        // Optional — additional headers
+  apiKey: "pk_live_...",                           // Required - your API key
+  baseUrl: "https://api.pagekit.app/v1",          // Optional - defaults to hosted API
+  timeout: 30000,                                  // Optional - request timeout in ms
+  fetch: customFetch,                              // Optional - custom fetch implementation
+  headers: { "X-Custom-Header": "value" },        // Optional - additional headers
 });
 ```
 
@@ -73,7 +73,7 @@ const pagekit = new Pagekit({
 
 | Option | Type | Required | Default | Description |
 |--------|------|----------|---------|-------------|
-| `apiKey` | `string` | Yes | — | Your PageKit API key (`pk_live_...`) |
+| `apiKey` | `string` | Yes | - | Your PageKit API key (`pk_live_...`) |
 | `baseUrl` | `string` | No | `https://api.pagekit.app/v1` | API base URL |
 | `timeout` | `number` | No | `30000` | Request timeout in milliseconds |
 | `fetch` | `typeof fetch` | No | `globalThis.fetch` | Custom fetch implementation (useful for tests) |
@@ -228,7 +228,7 @@ Create an author profile.
 const author = await pagekit.authors.create({
   name: "Jane Doe",
   bio: "Editor",
-  userId: "member-id", // optional — link to org member
+  userId: "member-id", // optional - link to org member
 });
 ```
 
@@ -377,8 +377,8 @@ try {
 
     // Convenience flags
     if (error.isAuthError) console.log("Invalid API key (401/403)");
-    if (error.isRateLimited) console.log("Rate limited — retry after delay (429)");
-    if (error.isServerError) console.log("Server error — safe to retry (5xx)");
+    if (error.isRateLimited) console.log("Rate limited - retry after delay (429)");
+    if (error.isServerError) console.log("Server error - safe to retry (5xx)");
   }
 }
 ```

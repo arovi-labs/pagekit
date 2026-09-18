@@ -8,9 +8,9 @@ Thanks for your interest in contributing! Here's the workflow we follow.
 
 Every change starts with an issue. Go to [Issues](https://github.com/arovi-labs/pagekit/issues/new/choose) and pick a template:
 
-- **Feature Request** — new functionality
-- **Bug Report** — something broken
-- **Documentation** — docs improvements
+- **Feature Request** - new functionality
+- **Bug Report** - something broken
+- **Documentation** - docs improvements
 
 Assign yourself to the issue.
 
@@ -23,10 +23,10 @@ git checkout -b feat/your-feature-name
 ```
 
 Branch naming:
-- `feat/` — new features
-- `fix/` — bug fixes
-- `docs/` — documentation
-- `chore/` — maintenance, deps, CI
+- `feat/` - new features
+- `fix/` - bug fixes
+- `docs/` - documentation
+- `chore/` - maintenance, deps, CI
 
 ### 3. Make Your Changes
 
@@ -116,7 +116,7 @@ pnpm typecheck    # Type-check
 - TypeScript strict mode
 - No comments unless the logic isn't self-evident
 - Follow existing patterns in the codebase
-- Keep things simple — don't over-engineer
+- Keep things simple - don't over-engineer
 
 ## Branch Protection (Recommended)
 

@@ -31,7 +31,7 @@ Go to **Settings → Branches → Add rule** for `main`:
 - [x] Require status checks: `ci (22)`, `ci (24)`, `test (3.12)`, `test (3.13)`
 - [x] Require branches to be up to date
 
-### 4. PyPI Trusted Publisher (Optional — replaces PYPI_TOKEN)
+### 4. PyPI Trusted Publisher (Optional - replaces PYPI_TOKEN)
 Go to pypi.org → **Publishing** → Add a new publisher:
 - **PyPI project name:** `pagekit-core`
 - **Owner:** `arovi-labs`

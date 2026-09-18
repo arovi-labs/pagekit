@@ -135,7 +135,7 @@ After running `pagekit init`, the following environment variable is configured i
 
 | Variable | Description |
 |----------|-------------|
-| `PAGEKIT_API_KEY` | Your PageKit API key — get it from your PageKit dashboard |
+| `PAGEKIT_API_KEY` | Your PageKit API key - get it from your PageKit dashboard |
 
 ---
 
@@ -143,9 +143,9 @@ After running `pagekit init`, the following environment variable is configured i
 
 The CLI automatically detects and uses your package manager:
 
-- **pnpm** — if `pnpm-lock.yaml` exists
-- **Yarn** — if `yarn.lock` exists
-- **npm** — fallback
+- **pnpm** - if `pnpm-lock.yaml` exists
+- **Yarn** - if `yarn.lock` exists
+- **npm** - fallback
 
 ---
 
@@ -169,10 +169,10 @@ pnpm typecheck
 
 ## Related Packages
 
-- [@arovi/pagekit-core](../pagekit-typescript) — TypeScript SDK
-- [@arovi/pagekit-mcp](../pagekit-mcp) — MCP server for AI agents
-- [@arovi/pagekit-next](../pagekit-next) — Next.js integration
-- [pagekit-core (Python)](../pagekit-python) — Python client
+- [@arovi/pagekit-core](../pagekit-typescript) - TypeScript SDK
+- [@arovi/pagekit-mcp](../pagekit-mcp) - MCP server for AI agents
+- [@arovi/pagekit-next](../pagekit-next) - Next.js integration
+- [pagekit-core (Python)](../pagekit-python) - Python client
 
 ---
 

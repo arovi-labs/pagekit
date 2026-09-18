@@ -1,13 +1,19 @@
 import { PagekitError } from "./errors";
 import type { HttpClient, RequestOptions } from "./http";
+import { AnalyticsResource } from "./resources/analytics";
 import { AuthorsResource } from "./resources/authors";
+import { CampaignsResource } from "./resources/campaigns";
 import { CategoriesResource } from "./resources/categories";
+import { DomainsResource } from "./resources/domains";
 import { MediaResource } from "./resources/media";
+import { NotificationsResource } from "./resources/notifications";
 import { PostsResource } from "./resources/posts";
+import { SubscribersResource } from "./resources/subscribers";
 import { TagsResource } from "./resources/tags";
+import { WebhooksResource } from "./resources/webhooks";
 
 export interface PagekitOptions {
-  /** A project API key — `pk_live_...`. */
+  /** A project API key - `pk_live_...`. */
   apiKey: string;
   /** Defaults to the hosted API. Point this at your own deployment if self-hosting. */
   baseUrl?: string;
@@ -29,6 +35,12 @@ export class Pagekit implements HttpClient {
   readonly categories: CategoriesResource;
   readonly tags: TagsResource;
   readonly media: MediaResource;
+  readonly webhooks: WebhooksResource;
+  readonly domains: DomainsResource;
+  readonly subscribers: SubscribersResource;
+  readonly campaigns: CampaignsResource;
+  readonly analytics: AnalyticsResource;
+  readonly notifications: NotificationsResource;
 
   private readonly fetchImpl: typeof globalThis.fetch;
   private readonly timeout: number;
@@ -63,6 +75,12 @@ export class Pagekit implements HttpClient {
     this.categories = new CategoriesResource(this);
     this.tags = new TagsResource(this);
     this.media = new MediaResource(this);
+    this.webhooks = new WebhooksResource(this);
+    this.domains = new DomainsResource(this);
+    this.subscribers = new SubscribersResource(this);
+    this.campaigns = new CampaignsResource(this);
+    this.analytics = new AnalyticsResource(this);
+    this.notifications = new NotificationsResource(this);
   }
 
   async request<T>(path: string, options: RequestOptions = {}): Promise<T> {

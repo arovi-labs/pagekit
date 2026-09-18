@@ -352,7 +352,7 @@ export function DraftPreview({ draftId }: { draftId: string }) {
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `PAGEKIT_API_KEY` | Yes* | — | Your PageKit API key |
+| `PAGEKIT_API_KEY` | Yes* | - | Your PageKit API key |
 | `PAGEKIT_API_URL` | No | `https://api.pagekit.app/v1` | API base URL |
 
 *Only optional if using `createPageKit()` explicitly.
@@ -376,11 +376,11 @@ import type {
 
 ## Features
 
-- **Server Component Ready** — All functions are async and designed for React Server Components
-- **Caching** — Responses are cached using Next.js fetch caching
-- **TypeScript First** — Full type inference and IntelliSense
-- **Lightweight** — Wraps `@arovi/pagekit-core` with zero additional overhead
-- **Auto-configuration** — Reads `PAGEKIT_API_KEY` from environment automatically
+- **Server Component Ready** - All functions are async and designed for React Server Components
+- **Caching** - Responses are cached using Next.js fetch caching
+- **TypeScript First** - Full type inference and IntelliSense
+- **Lightweight** - Wraps `@arovi/pagekit-core` with zero additional overhead
+- **Auto-configuration** - Reads `PAGEKIT_API_KEY` from environment automatically
 
 ---
 
@@ -429,10 +429,10 @@ pnpm typecheck
 
 ## Related Packages
 
-- [@arovi/pagekit-core](../pagekit-typescript) — TypeScript SDK
-- [@arovi/pagekit-mcp](../pagekit-mcp) — MCP server for AI agents
-- [@arovi/pagekit-cli](../pagekit-cli) — CLI tooling
-- [pagekit-core (Python)](../pagekit-python) — Python client
+- [@arovi/pagekit-core](../pagekit-typescript) - TypeScript SDK
+- [@arovi/pagekit-mcp](../pagekit-mcp) - MCP server for AI agents
+- [@arovi/pagekit-cli](../pagekit-cli) - CLI tooling
+- [pagekit-core (Python)](../pagekit-python) - Python client
 
 ---
 

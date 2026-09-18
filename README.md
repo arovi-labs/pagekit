@@ -26,7 +26,7 @@ PageKit is a developer-first content backend. It provides a Content API, a publi
 | Package | Description | Install |
 |---------|-------------|---------|
 | [`@arovi/pagekit-core`](./pagekit-typescript) | TypeScript client for the PageKit content API | `pnpm add @arovi/pagekit-core` |
-| [`@arovi/pagekit-mcp`](./pagekit-mcp) | MCP server — let AI agents manage your content | `pnpm add -g @arovi/pagekit-mcp` |
+| [`@arovi/pagekit-mcp`](./pagekit-mcp) | MCP server - let AI agents manage your content | `pnpm add -g @arovi/pagekit-mcp` |
 | [`@arovi/pagekit-next`](./pagekit-next) | Next.js integration (server components, caching) | `pnpm add @arovi/pagekit-next` |
 | [`@arovi/pagekit-cli`](./pagekit-cli) | CLI tooling for scaffolding and management | `pnpm add -g @arovi/pagekit-cli` |
 | [`pagekit-core`](./pagekit-python) | Python client for the PageKit content API | `pip install pagekit-core` |
@@ -306,11 +306,11 @@ The CLI detects your framework, sets up the SDK, and creates your environment co
 
 ```
 pagekit/
-├── pagekit-typescript/  # @arovi/pagekit-core — TypeScript content client
-├── pagekit-mcp/         # @arovi/pagekit-mcp — MCP server for AI agents
-├── pagekit-cli/         # @arovi/pagekit-cli — CLI tooling
-├── pagekit-next/        # @arovi/pagekit-next — Next.js integration
-├── pagekit-python/      # pagekit-core (PyPI) — Python content client
+├── pagekit-typescript/  # @arovi/pagekit-core - TypeScript content client
+├── pagekit-mcp/         # @arovi/pagekit-mcp - MCP server for AI agents
+├── pagekit-cli/         # @arovi/pagekit-cli - CLI tooling
+├── pagekit-next/        # @arovi/pagekit-next - Next.js integration
+├── pagekit-python/      # pagekit-core (PyPI) - Python content client
 ├── examples/
 │   └── next-blog/       # Example Next.js blog
 └── docs/

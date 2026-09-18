@@ -10,7 +10,7 @@ export function registerProjectTools(server: McpServer, api: PagekitClient) {
     "pagekit_project_info",
     {
       title: "Project Info",
-      description: `Get information about the current project — name, slug, post counts, and API key status.
+      description: `Get information about the current project - name, slug, post counts, and API key status.
 This is the "who am I" endpoint for your API key.
 
 Example:

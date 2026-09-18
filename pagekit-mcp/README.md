@@ -156,8 +156,8 @@ Start the server with: `PAGEKIT_API_KEY=pk_live_... pagekit-mcp --http`
 
 | Tool | Description | Parameters |
 |------|-------------|------------|
-| `pagekit_list_tags` | List all tags | — |
-| `pagekit_list_categories` | List all categories | — |
+| `pagekit_list_tags` | List all tags | - |
+| `pagekit_list_categories` | List all categories | - |
 
 ### Authors
 
@@ -172,7 +172,7 @@ Start the server with: `PAGEKIT_API_KEY=pk_live_... pagekit-mcp --http`
 
 | Tool | Description | Parameters |
 |------|-------------|------------|
-| `pagekit_list_media` | List media assets | — |
+| `pagekit_list_media` | List media assets | - |
 | `pagekit_create_media` | Register a media asset | `url`, `filename`, `mimeType`, `size`, `alt` |
 | `pagekit_delete_media` | Delete a media asset | `id` |
 
@@ -217,7 +217,7 @@ Once configured, you can interact with your PageKit content naturally:
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `PAGEKIT_API_KEY` | Yes | — | Your PageKit API key (`pk_live_...`) |
+| `PAGEKIT_API_KEY` | Yes | - | Your PageKit API key (`pk_live_...`) |
 | `PAGEKIT_API_URL` | No | `http://localhost:3003/api/v1` | API base URL (include `/api/v1`) |
 | `PORT` | No | `3100` | HTTP port (only with `--http` flag) |
 
@@ -264,10 +264,10 @@ pagekit-mcp/
 
 ## Related Packages
 
-- [@arovi/pagekit-core](../pagekit-typescript) — TypeScript SDK
-- [@arovi/pagekit-next](../pagekit-next) — Next.js integration
-- [@arovi/pagekit-cli](../pagekit-cli) — CLI tooling
-- [pagekit-core (Python)](../pagekit-python) — Python client
+- [@arovi/pagekit-core](../pagekit-typescript) - TypeScript SDK
+- [@arovi/pagekit-next](../pagekit-next) - Next.js integration
+- [@arovi/pagekit-cli](../pagekit-cli) - CLI tooling
+- [pagekit-core (Python)](../pagekit-python) - Python client
 
 ---
 

@@ -55,7 +55,110 @@ export interface Media {
   createdAt?: string;
 }
 
-/** Shape returned by the API — matches PRD §17. */
+export interface Webhook {
+  id: string;
+  url: string;
+  events: string[];
+  active: boolean;
+  lastTriggeredAt?: string | null;
+  failureCount: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface WebhookCreateInput {
+  url: string;
+  events: string[];
+  secret?: string;
+}
+
+export type WebhookUpdateInput = Partial<WebhookCreateInput>;
+
+export interface Domain {
+  id: string;
+  hostname: string;
+  dnsRecordType: string;
+  verified: boolean;
+  verifiedAt?: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface DomainCreateInput {
+  hostname: string;
+}
+
+export interface Subscriber {
+  id: string;
+  email: string;
+  name?: string | null;
+  status: "pending" | "subscribed" | "unsubscribed" | "bounced";
+  createdAt: string;
+}
+
+export interface SubscriberCreateInput {
+  email: string;
+  name?: string;
+}
+
+export interface Campaign {
+  id: string;
+  name: string;
+  subject?: string | null;
+  content?: string | null;
+  status: "draft" | "scheduled" | "sending" | "sent";
+  scheduledFor?: string | null;
+  sentAt?: string | null;
+  recipientCount: number;
+  openCount: number;
+  clickCount: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CampaignCreateInput {
+  name: string;
+  subject?: string;
+  content?: string;
+  scheduledFor?: string;
+}
+
+export type CampaignUpdateInput = Partial<CampaignCreateInput>;
+
+export interface AnalyticsEvent {
+  id: string;
+  type: string;
+  path?: string | null;
+  referrer?: string | null;
+  country?: string | null;
+  createdAt: string;
+}
+
+export interface AnalyticsEventCreateInput {
+  type: string;
+  path?: string;
+  referrer?: string;
+  country?: string;
+}
+
+export interface AnalyticsStats {
+  totalViews: number;
+  viewsThisMonth: number;
+  topPosts: { title: string; views: number }[];
+  daily: { date: string; views: number }[];
+}
+
+export interface Notification {
+  id: string;
+  type: string;
+  title: string;
+  body?: string | null;
+  read: boolean;
+  link?: string | null;
+  createdAt: string;
+}
+
+/** Shape returned by the API - matches PRD §17. */
 export interface Post {
   id: string;
   title: string;
@@ -152,4 +255,21 @@ export interface MediaCreateInput {
   width?: number;
   height?: number;
   alt?: string;
+}
+
+export interface WebhookListParams {
+  page?: number;
+  limit?: number;
+}
+
+export interface SubscriberListParams {
+  page?: number;
+  limit?: number;
+  status?: string;
+}
+
+export interface CampaignListParams {
+  page?: number;
+  limit?: number;
+  status?: string;
 }

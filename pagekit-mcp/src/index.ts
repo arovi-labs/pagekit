@@ -56,7 +56,7 @@ async function main() {
     await client.health();
   } catch {
     console.error(`WARNING: Could not reach Pagekit API at ${API_BASE}`);
-    console.error("The server will start anyway — tools may fail until the API is reachable.");
+    console.error("The server will start anyway - tools may fail until the API is reachable.");
   }
 
   const useHttp = process.argv.includes("--http");

@@ -1,13 +1,13 @@
 /**
  * Streamable HTTP transport for the MCP server.
- * Enables remote access — useful for shared team configs.
+ * Enables remote access - useful for shared team configs.
  */
 
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 
 export async function createHttpServer(server: McpServer, apiKey: string) {
-  // Dynamic import for express — only needed with --http
+  // Dynamic import for express - only needed with --http
   const express = (await import("express")).default;
   const app = express();
   app.use(express.json());

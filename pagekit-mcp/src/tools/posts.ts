@@ -14,10 +14,10 @@ export function registerPostTools(server: McpServer, api: PagekitClient) {
       description: `List blog posts with filters. Returns paginated results.
 
 Examples:
-  pagekit_list_posts() — list recent posts
-  pagekit_list_posts({ status: "published" }) — only published
-  pagekit_list_posts({ tag: "nextjs", limit: 5 }) — 5 posts tagged "nextjs"
-  pagekit_list_posts({ search: "react", status: "draft" }) — draft posts about react`,
+  pagekit_list_posts() - list recent posts
+  pagekit_list_posts({ status: "published" }) - only published
+  pagekit_list_posts({ tag: "nextjs", limit: 5 }) - 5 posts tagged "nextjs"
+  pagekit_list_posts({ search: "react", status: "draft" }) - draft posts about react`,
       inputSchema: {
         status: z.enum(["draft", "published", "scheduled"]).optional().describe("Filter by status"),
         author: z.string().optional().describe("Filter by author ID"),

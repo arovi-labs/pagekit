@@ -10,7 +10,7 @@ const program = new Command();
 
 program
   .name("pagekit")
-  .description("CLI for PageKit — the content layer for your website")
+  .description("CLI for PageKit - the content layer for your website")
   .version("0.1.0");
 
 program

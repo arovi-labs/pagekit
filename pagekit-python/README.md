@@ -105,7 +105,7 @@ client = Pagekit(
 
 | Option | Type | Required | Default | Description |
 |--------|------|----------|---------|-------------|
-| `api_key` | `str` | Yes | — | Your PageKit API key |
+| `api_key` | `str` | Yes | - | Your PageKit API key |
 | `base_url` | `str` | No | `https://api.pagekit.cc/v1` | API base URL |
 | `timeout` | `float` | No | `30` | Request timeout in seconds |
 | `headers` | `dict` | No | `{}` | Additional headers for all requests |
@@ -408,9 +408,9 @@ except PagekitError as e:
     if e.is_auth_error:
         print("Invalid API key (401/403)")
     if e.is_rate_limited:
-        print("Rate limited — retry after delay (429)")
+        print("Rate limited - retry after delay (429)")
     if e.is_server_error:
-        print("Server error — safe to retry (5xx)")
+        print("Server error - safe to retry (5xx)")
 ```
 
 ### Error Properties
@@ -517,10 +517,10 @@ black src tests
 
 ## Related Packages
 
-- [@arovi/pagekit-core](../pagekit-typescript) — TypeScript SDK
-- [@arovi/pagekit-mcp](../pagekit-mcp) — MCP server for AI agents
-- [@arovi/pagekit-next](../pagekit-next) — Next.js integration
-- [@arovi/pagekit-cli](../pagekit-cli) — CLI tooling
+- [@arovi/pagekit-core](../pagekit-typescript) - TypeScript SDK
+- [@arovi/pagekit-mcp](../pagekit-mcp) - MCP server for AI agents
+- [@arovi/pagekit-next](../pagekit-next) - Next.js integration
+- [@arovi/pagekit-cli](../pagekit-cli) - CLI tooling
 
 ---
 
