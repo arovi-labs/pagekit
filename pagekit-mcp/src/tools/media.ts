@@ -2,6 +2,7 @@ import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import type { PagekitClient } from "../client.js";
 import { ok, err, listMarkdown } from "../format.js";
+import { paginationParams } from "../api-params.js";
 
 export function registerMediaTools(server: McpServer, api: PagekitClient) {
   // ── List Media ──────────────────────────────────────────────────────────
@@ -24,8 +25,7 @@ Example:
     async (p) => {
       try {
         const res = await api.get<{ data: { id: string; filename: string; url: string; mimeType: string; size: number; alt?: string }[] }>("/media", {
-          limit: String(p.limit),
-          offset: String(p.offset),
+          ...paginationParams(p.limit, p.offset),
         });
         const md = listMarkdown(res.data, "Media", (m) => {
           const asset = m as { mimeType: string; size: number; url: string };

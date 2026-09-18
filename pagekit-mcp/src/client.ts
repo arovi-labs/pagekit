@@ -53,7 +53,8 @@ export class PagekitClient {
     body?: unknown,
     params?: Record<string, string>,
   ): Promise<T> {
-    const url = new URL(path, this.base);
+    // Leading slash would drop the /api/v1 base path (URL resolves from origin).
+    const url = new URL(path.replace(/^\//, ""), `${this.base}/`);
     if (params) {
       for (const [k, v] of Object.entries(params)) {
         if (v !== undefined && v !== null && v !== "") url.searchParams.set(k, v);

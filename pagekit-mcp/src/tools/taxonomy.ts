@@ -2,6 +2,7 @@ import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import type { PagekitClient } from "../client.js";
 import { ok, err, listMarkdown } from "../format.js";
+import { paginationParams } from "../api-params.js";
 
 export function registerTaxonomyTools(server: McpServer, api: PagekitClient) {
   // ── Tags ────────────────────────────────────────────────────────────────
@@ -28,8 +29,7 @@ Example:
         const res = await api.get<{ data: { id: string; name: string; slug: string; _count?: { posts: number } }[] }>("/tags", {
           search: p.search ?? "",
           sort: p.sort ?? "",
-          limit: String(p.limit),
-          offset: String(p.offset),
+          ...paginationParams(p.limit, p.offset),
         });
         const md = listMarkdown(res.data, "Tags", (t) => {
           const count = (t as { posts?: number; _count?: { posts: number } }).posts ?? (t as { _count?: { posts: number } })._count?.posts ?? 0;
@@ -61,8 +61,7 @@ Example:
       try {
         const res = await api.get<{ data: { id: string; name: string; slug: string; description?: string }[] }>("/categories", {
           sort: p.sort ?? "",
-          limit: String(p.limit),
-          offset: String(p.offset),
+          ...paginationParams(p.limit, p.offset),
         });
         const md = listMarkdown(res.data, "Categories", (c) => {
           const cat = c as { description?: string };

@@ -2,6 +2,7 @@ import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import type { PagekitClient } from "../client.js";
 import { ok, err, postMarkdown, listMarkdown } from "../format.js";
+import { normalizePostPayload, paginationParams } from "../api-params.js";
 
 export function registerPostTools(server: McpServer, api: PagekitClient) {
   // ── List Posts ────────────────────────────────────────────────────────
@@ -32,14 +33,13 @@ Examples:
     async (p) => {
       try {
         const res = await api.get<{ data: unknown[]; pagination: unknown }>("/posts", {
-          status: p.status ?? "",
+          status: p.status ? p.status.toUpperCase() : "",
           author: p.author ?? "",
           category: p.category ?? "",
           tag: p.tag ?? "",
           search: p.search ?? "",
           sort: p.sort ?? "",
-          limit: String(p.limit),
-          offset: String(p.offset),
+          ...paginationParams(p.limit, p.offset),
         });
         const md = listMarkdown(res.data as { id: string; title: string; slug?: string; status?: string; excerpt?: string }[], "Posts", (item) => {
           const post = item as { slug?: string; status?: string; excerpt?: string };
@@ -109,7 +109,7 @@ Examples:
     },
     async (p) => {
       try {
-        const post = await api.post<Record<string, unknown>>("/posts", p);
+        const post = await api.post<Record<string, unknown>>("/posts", normalizePostPayload(p));
         return ok(post, postMarkdown(post));
       } catch (e) { return err(e); }
     },
@@ -145,7 +145,7 @@ Examples:
     async (p) => {
       try {
         const { id, ...body } = p;
-        const post = await api.patch<Record<string, unknown>>(`/posts/${id}`, body);
+        const post = await api.patch<Record<string, unknown>>(`/posts/${id}`, normalizePostPayload(body));
         return ok(post, postMarkdown(post));
       } catch (e) { return err(e); }
     },
