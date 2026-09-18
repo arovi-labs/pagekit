@@ -17,7 +17,7 @@ import (
 
 const (
 	DefaultBaseURL = "https://api.pagekit.app/v1"
-	Version        = "0.1.0"
+	Version        = "0.1.1"
 	userAgent      = "pagekit-go/" + Version
 	maxRetries     = 3
 )

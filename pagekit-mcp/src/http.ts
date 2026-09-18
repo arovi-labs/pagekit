@@ -23,7 +23,7 @@ export async function createHttpServer(server: McpServer, apiKey: string) {
   });
 
   app.get("/mcp", async (req, res) => {
-    res.json({ name: "pagekit-mcp-server", version: "1.0.3", status: "ok" });
+    res.json({ name: "pagekit-mcp-server", version: "1.0.4", status: "ok" });
   });
 
   const port = parseInt(process.env.PORT ?? "9472", 10);

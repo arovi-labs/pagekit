@@ -1,5 +1,12 @@
 # @arovi/pagekit-mcp
 
+## 1.0.4
+
+### Minor Changes
+
+- Author CRUD tools: `pagekit_get_author`, `pagekit_create_author`, `pagekit_update_author`
+- Default API URL `http://localhost:4783/api/v1`, MCP HTTP port `9472`
+
 ## 1.0.2
 
 ### Patch Changes

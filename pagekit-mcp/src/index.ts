@@ -29,7 +29,7 @@ const API_BASE = process.env.PAGEKIT_API_URL ?? "http://localhost:4783/api/v1";
 
 const server = new McpServer({
   name: "pagekit-mcp-server",
-  version: "1.0.3",
+  version: "1.0.4",
 });
 
 const client = new PagekitClient(API_BASE, API_KEY);

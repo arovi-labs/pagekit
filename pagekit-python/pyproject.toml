@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pagekit-core"
-version = "0.1.1"
+version = "0.1.2"
 description = "Python client for the Pagekit content API"
 readme = "README.md"
 license = "MIT"

@@ -1,6 +1,6 @@
 {
   "name": "@arovi/pagekit-core",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "TypeScript client for the Pagekit content API.",
   "license": "MIT",
   "type": "module",

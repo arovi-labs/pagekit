@@ -1,5 +1,11 @@
 # @arovi/pagekit-core
 
+## 0.1.3
+
+### Minor Changes
+
+- Author profiles: `slug`, `userId`, `getBySlug`, `create`, `update`
+
 ## 0.1.2
 
 ### Patch Changes
