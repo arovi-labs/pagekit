@@ -23,10 +23,10 @@ export async function createHttpServer(server: McpServer, apiKey: string) {
   });
 
   app.get("/mcp", async (req, res) => {
-    res.json({ name: "pagekit-mcp-server", version: "1.0.0", status: "ok" });
+    res.json({ name: "pagekit-mcp-server", version: "1.0.3", status: "ok" });
   });
 
-  const port = parseInt(process.env.PORT ?? "3100", 10);
+  const port = parseInt(process.env.PORT ?? "9472", 10);
   app.listen(port, "127.0.0.1", () => {
     console.error(`Pagekit MCP server running on http://127.0.0.1:${port}/mcp`);
   });

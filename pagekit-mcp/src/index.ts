@@ -21,7 +21,7 @@ import { registerAllTools } from "./tools/index.js";
 // ---------------------------------------------------------------------------
 
 const API_KEY = process.env.PAGEKIT_API_KEY ?? "";
-const API_BASE = process.env.PAGEKIT_API_URL ?? "http://localhost:3003/api/v1";
+const API_BASE = process.env.PAGEKIT_API_URL ?? "http://localhost:4783/api/v1";
 
 // ---------------------------------------------------------------------------
 // Server
