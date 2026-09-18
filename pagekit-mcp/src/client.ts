@@ -42,7 +42,7 @@ export class PagekitClient {
   // ── Health ─────────────────────────────────────────────────────────────
 
   async health() {
-    return this.get("/api/v1/health");
+    return this.get("/health");
   }
 
   // ── Private ────────────────────────────────────────────────────────────

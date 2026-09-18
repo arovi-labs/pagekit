@@ -3,7 +3,9 @@ from .errors import PagekitError
 from .http import DEFAULT_BASE_URL
 from .types import (
     Author,
+    AuthorCreateInput,
     AuthorListParams,
+    AuthorUpdateInput,
     Category,
     CategoryListParams,
     Media,
@@ -27,7 +29,9 @@ __all__ = [
     "Pagekit",
     "PagekitError",
     "Author",
+    "AuthorCreateInput",
     "AuthorListParams",
+    "AuthorUpdateInput",
     "Category",
     "CategoryListParams",
     "Media",

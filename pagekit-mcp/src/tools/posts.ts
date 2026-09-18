@@ -31,7 +31,7 @@ Examples:
     },
     async (p) => {
       try {
-        const res = await api.get<{ data: unknown[]; pagination: unknown }>("/api/v1/posts", {
+        const res = await api.get<{ data: unknown[]; pagination: unknown }>("/posts", {
           status: p.status ?? "",
           author: p.author ?? "",
           category: p.category ?? "",
@@ -72,7 +72,7 @@ Examples:
     async (p) => {
       try {
         if (!p.id && !p.slug) throw new Error("Provide either id or slug.");
-        const path = p.id ? `/api/v1/posts/${p.id}` : `/api/v1/posts/slug/${p.slug}`;
+        const path = p.id ? `/posts/${p.id}` : `/posts/slug/${p.slug}`;
         const post = await api.get<Record<string, unknown>>(path);
         return ok(post, postMarkdown(post));
       } catch (e) { return err(e); }
@@ -109,7 +109,7 @@ Examples:
     },
     async (p) => {
       try {
-        const post = await api.post<Record<string, unknown>>("/api/v1/posts", p);
+        const post = await api.post<Record<string, unknown>>("/posts", p);
         return ok(post, postMarkdown(post));
       } catch (e) { return err(e); }
     },
@@ -145,7 +145,7 @@ Examples:
     async (p) => {
       try {
         const { id, ...body } = p;
-        const post = await api.patch<Record<string, unknown>>(`/api/v1/posts/${id}`, body);
+        const post = await api.patch<Record<string, unknown>>(`/posts/${id}`, body);
         return ok(post, postMarkdown(post));
       } catch (e) { return err(e); }
     },
@@ -168,7 +168,7 @@ Example:
     },
     async (p) => {
       try {
-        await api.del(`/api/v1/posts/${p.id}`);
+        await api.del(`/posts/${p.id}`);
         return ok({ deleted: true, id: p.id }, `Post \`${p.id}\` deleted.`);
       } catch (e) { return err(e); }
     },

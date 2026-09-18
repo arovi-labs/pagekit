@@ -246,6 +246,46 @@ author = client.authors.get("author-id")
 
 ---
 
+#### `client.authors.get_by_slug(slug)`
+
+Get a single author by slug.
+
+```python
+author = client.authors.get_by_slug("jane-doe")
+```
+
+**Returns:** `Author`
+
+---
+
+#### `client.authors.create(input)`
+
+Create an author profile.
+
+```python
+from pagekit import AuthorCreateInput
+
+author = client.authors.create(AuthorCreateInput(name="Jane Doe", bio="Editor"))
+```
+
+**Returns:** `Author`
+
+---
+
+#### `client.authors.update(author_id, input)`
+
+Update an author profile.
+
+```python
+from pagekit import AuthorUpdateInput
+
+author = client.authors.update("author-id", AuthorUpdateInput(bio="Senior editor"))
+```
+
+**Returns:** `Author`
+
+---
+
 ### Categories
 
 #### `client.categories.list(params?)`

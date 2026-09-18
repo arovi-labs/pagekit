@@ -24,7 +24,7 @@ Example:
           project: { id: string; name: string; slug: string; createdAt: string };
           apiKeyId: string;
           posts: Record<string, number>;
-        }>("/api/v1/me");
+        }>("/me");
 
         const totalPosts = Object.values(res.posts).reduce((a, b) => a + b, 0);
         const md = [

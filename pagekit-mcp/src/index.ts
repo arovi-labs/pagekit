@@ -21,7 +21,7 @@ import { registerAllTools } from "./tools/index.js";
 // ---------------------------------------------------------------------------
 
 const API_KEY = process.env.PAGEKIT_API_KEY ?? "";
-const API_BASE = process.env.PAGEKIT_API_URL ?? "http://localhost:3000";
+const API_BASE = process.env.PAGEKIT_API_URL ?? "http://localhost:3003/api/v1";
 
 // ---------------------------------------------------------------------------
 // Server
@@ -29,7 +29,7 @@ const API_BASE = process.env.PAGEKIT_API_URL ?? "http://localhost:3000";
 
 const server = new McpServer({
   name: "pagekit-mcp-server",
-  version: "1.0.0",
+  version: "1.0.3",
 });
 
 const client = new PagekitClient(API_BASE, API_KEY);

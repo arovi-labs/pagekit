@@ -208,6 +208,46 @@ const author = await pagekit.authors.get("author-id");
 
 ---
 
+#### `pagekit.authors.getBySlug(slug)`
+
+Get a single author by slug.
+
+```ts
+const author = await pagekit.authors.getBySlug("jane-doe");
+```
+
+**Returns:** `Author`
+
+---
+
+#### `pagekit.authors.create(input)`
+
+Create an author profile.
+
+```ts
+const author = await pagekit.authors.create({
+  name: "Jane Doe",
+  bio: "Editor",
+  userId: "member-id", // optional — link to org member
+});
+```
+
+**Returns:** `Author`
+
+---
+
+#### `pagekit.authors.update(id, input)`
+
+Update an author profile.
+
+```ts
+const author = await pagekit.authors.update("author-id", { bio: "Senior editor" });
+```
+
+**Returns:** `Author`
+
+---
+
 ### Categories
 
 #### `pagekit.categories.list(params?)`

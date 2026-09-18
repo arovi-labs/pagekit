@@ -25,7 +25,7 @@ Example:
     },
     async (p) => {
       try {
-        const res = await api.get<{ data: { id: string; name: string; slug: string; _count?: { posts: number } }[] }>("/api/v1/tags", {
+        const res = await api.get<{ data: { id: string; name: string; slug: string; _count?: { posts: number } }[] }>("/tags", {
           search: p.search ?? "",
           sort: p.sort ?? "",
           limit: String(p.limit),
@@ -59,7 +59,7 @@ Example:
     },
     async (p) => {
       try {
-        const res = await api.get<{ data: { id: string; name: string; slug: string; description?: string }[] }>("/api/v1/categories", {
+        const res = await api.get<{ data: { id: string; name: string; slug: string; description?: string }[] }>("/categories", {
           sort: p.sort ?? "",
           limit: String(p.limit),
           offset: String(p.offset),
@@ -73,36 +73,4 @@ Example:
     },
   );
 
-  // ── Authors ─────────────────────────────────────────────────────────────
-
-  server.registerTool(
-    "pagekit_list_authors",
-    {
-      title: "List Authors",
-      description: `List all authors.
-
-Example:
-  pagekit_list_authors()`,
-      inputSchema: {
-        sort: z.string().optional().describe("Sort field"),
-        limit: z.number().int().min(1).max(100).default(50).describe("Max results"),
-        offset: z.number().int().min(0).default(0).describe("Pagination offset"),
-      },
-      annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
-    },
-    async (p) => {
-      try {
-        const res = await api.get<{ data: { id: string; name: string; email?: string }[] }>("/api/v1/authors", {
-          sort: p.sort ?? "",
-          limit: String(p.limit),
-          offset: String(p.offset),
-        });
-        const md = listMarkdown(res.data, "Authors", (a) => {
-          const author = a as { email?: string };
-          return author.email ? [`  ${author.email}`] : [];
-        });
-        return ok(res, md);
-      } catch (e) { return err(e); }
-    },
-  );
 }

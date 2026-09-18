@@ -10,12 +10,25 @@ export interface Seo {
 export interface Author {
   id: string;
   name: string;
+  slug?: string | null;
+  userId?: string | null;
   email?: string | null;
   bio?: string | null;
   avatarUrl?: string | null;
   createdAt?: string;
   updatedAt?: string;
 }
+
+export interface AuthorCreateInput {
+  name: string;
+  slug?: string;
+  userId?: string;
+  email?: string;
+  bio?: string;
+  avatarUrl?: string;
+}
+
+export type AuthorUpdateInput = Partial<AuthorCreateInput>;
 
 export interface Category {
   id: string;

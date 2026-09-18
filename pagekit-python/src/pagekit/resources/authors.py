@@ -3,7 +3,7 @@ from __future__ import annotations
 from urllib.parse import quote
 
 from ..http import AsyncHttpClient, SyncHttpClient, _build_query, _deserialize
-from ..types import Author, AuthorListParams, Paginated, Pagination
+from ..types import Author, AuthorCreateInput, AuthorListParams, AuthorUpdateInput, Paginated, Pagination
 
 
 class AsyncAuthorsResource:
@@ -22,6 +22,22 @@ class AsyncAuthorsResource:
         raw = await self._http.request(f"/authors/{quote(id, safe='')}")
         return _deserialize(raw, Author)
 
+    async def get_by_slug(self, slug: str) -> Author:
+        raw = await self._http.request(f"/authors/slug/{quote(slug, safe='')}")
+        return _deserialize(raw, Author)
+
+    async def create(self, input: AuthorCreateInput) -> Author:
+        raw = await self._http.request("/authors", method="POST", body=input)
+        return _deserialize(raw, Author)
+
+    async def update(self, id: str, input: AuthorUpdateInput) -> Author:
+        raw = await self._http.request(
+            f"/authors/{quote(id, safe='')}",
+            method="PATCH",
+            body=input,
+        )
+        return _deserialize(raw, Author)
+
 
 class SyncAuthorsResource:
     def __init__(self, http: SyncHttpClient) -> None:
@@ -37,4 +53,20 @@ class SyncAuthorsResource:
 
     def get(self, id: str) -> Author:
         raw = self._http.request(f"/authors/{quote(id, safe='')}")
+        return _deserialize(raw, Author)
+
+    def get_by_slug(self, slug: str) -> Author:
+        raw = self._http.request(f"/authors/slug/{quote(slug, safe='')}")
+        return _deserialize(raw, Author)
+
+    def create(self, input: AuthorCreateInput) -> Author:
+        raw = self._http.request("/authors", method="POST", body=input)
+        return _deserialize(raw, Author)
+
+    def update(self, id: str, input: AuthorUpdateInput) -> Author:
+        raw = self._http.request(
+            f"/authors/{quote(id, safe='')}",
+            method="PATCH",
+            body=input,
+        )
         return _deserialize(raw, Author)

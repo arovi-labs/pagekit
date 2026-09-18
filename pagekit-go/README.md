@@ -85,6 +85,16 @@ authors, err := client.Authors.List(ctx)
 
 // Get an author
 author, err := client.Authors.Get(ctx, "author_1")
+author, err = client.Authors.GetBySlug(ctx, "jane-doe")
+
+// Create / update
+author, err = client.Authors.Create(ctx, pagekit.AuthorCreateInput{
+    Name: "Jane Doe",
+    Bio:  pagekit.Ptr("Editor"),
+})
+author, err = client.Authors.Update(ctx, "author_1", pagekit.AuthorUpdateInput{
+    Bio: pagekit.Ptr("Senior editor"),
+})
 ```
 
 ### Categories

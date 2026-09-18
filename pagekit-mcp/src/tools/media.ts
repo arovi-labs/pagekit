@@ -23,7 +23,7 @@ Example:
     },
     async (p) => {
       try {
-        const res = await api.get<{ data: { id: string; filename: string; url: string; mimeType: string; size: number; alt?: string }[] }>("/api/v1/media", {
+        const res = await api.get<{ data: { id: string; filename: string; url: string; mimeType: string; size: number; alt?: string }[] }>("/media", {
           limit: String(p.limit),
           offset: String(p.offset),
         });
@@ -67,7 +67,7 @@ Example:
     },
     async (p) => {
       try {
-        const asset = await api.post<Record<string, unknown>>("/api/v1/media", p);
+        const asset = await api.post<Record<string, unknown>>("/media", p);
         return ok(asset, `Media registered: \`${asset.id}\``);
       } catch (e) { return err(e); }
     },
@@ -90,7 +90,7 @@ Example:
     },
     async (p) => {
       try {
-        await api.del(`/api/v1/media/${p.id}`);
+        await api.del(`/media/${p.id}`);
         return ok({ deleted: true, id: p.id }, `Media \`${p.id}\` deleted.`);
       } catch (e) { return err(e); }
     },

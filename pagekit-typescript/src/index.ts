@@ -13,7 +13,9 @@ export { TagsResource } from "./resources/tags";
 
 export type {
   Author,
+  AuthorCreateInput,
   AuthorListParams,
+  AuthorUpdateInput,
   Category,
   CategoryListParams,
   Media,

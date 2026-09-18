@@ -26,11 +26,33 @@ class Seo:
 class Author:
     id: str
     name: str
+    slug: str | None = None
+    user_id: str | None = None
     email: str | None = None
     bio: str | None = None
     avatar_url: str | None = None
     created_at: str | None = None
     updated_at: str | None = None
+
+
+@dataclass
+class AuthorCreateInput:
+    name: str
+    slug: str | None = None
+    user_id: str | None = None
+    email: str | None = None
+    bio: str | None = None
+    avatar_url: str | None = None
+
+
+@dataclass
+class AuthorUpdateInput:
+    name: str | None = None
+    slug: str | None = None
+    user_id: str | None = None
+    email: str | None = None
+    bio: str | None = None
+    avatar_url: str | None = None
 
 
 @dataclass

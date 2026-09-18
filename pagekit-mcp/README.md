@@ -79,7 +79,8 @@ Add to `claude_desktop_config.json`:
     "pagekit": {
       "command": "pagekit-mcp",
       "env": {
-        "PAGEKIT_API_KEY": "pk_live_..."
+        "PAGEKIT_API_KEY": "pk_live_...",
+        "PAGEKIT_API_URL": "http://localhost:3003/api/v1"
       }
     }
   }
@@ -88,7 +89,7 @@ Add to `claude_desktop_config.json`:
 
 ### Cursor
 
-Add to `.cursor/mcp.json`:
+Copy `.cursor/mcp.json.example` to `.cursor/mcp.json` and set your API key:
 
 ```json
 {
@@ -96,7 +97,8 @@ Add to `.cursor/mcp.json`:
     "pagekit": {
       "command": "pagekit-mcp",
       "env": {
-        "PAGEKIT_API_KEY": "pk_live_..."
+        "PAGEKIT_API_KEY": "pk_live_...",
+        "PAGEKIT_API_URL": "http://localhost:3003/api/v1"
       }
     }
   }
@@ -156,7 +158,15 @@ Start the server with: `PAGEKIT_API_KEY=pk_live_... pagekit-mcp --http`
 |------|-------------|------------|
 | `pagekit_list_tags` | List all tags | — |
 | `pagekit_list_categories` | List all categories | — |
-| `pagekit_list_authors` | List all authors | — |
+
+### Authors
+
+| Tool | Description | Parameters |
+|------|-------------|------------|
+| `pagekit_list_authors` | List author profiles | `sort`, `page`, `limit` |
+| `pagekit_get_author` | Get author by ID or slug | `id` or `slug` |
+| `pagekit_create_author` | Create an author profile | `name`, `slug`, `email`, `bio`, `avatarUrl`, `userId` |
+| `pagekit_update_author` | Update an author profile | `id`, plus fields to update |
 
 ### Media
 
@@ -208,7 +218,7 @@ Once configured, you can interact with your PageKit content naturally:
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `PAGEKIT_API_KEY` | Yes | — | Your PageKit API key (`pk_live_...`) |
-| `PAGEKIT_API_URL` | No | `http://localhost:3000` | API base URL |
+| `PAGEKIT_API_URL` | No | `http://localhost:3003/api/v1` | API base URL (include `/api/v1`) |
 | `PORT` | No | `3100` | HTTP port (only with `--http` flag) |
 
 ---
@@ -242,7 +252,8 @@ pagekit-mcp/
 │   └── tools/
 │       ├── index.ts       # Tool registration
 │       ├── posts.ts       # Post CRUD tools
-│       ├── taxonomy.ts    # Tags, categories, authors
+│       ├── taxonomy.ts    # Tags and categories
+│       ├── authors.ts     # Author CRUD tools
 │       ├── media.ts       # Media management
 │       └── project.ts     # Project info & health
 ├── dist/                  # Compiled output

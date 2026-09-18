@@ -106,6 +106,43 @@ def test_authors_get():
 
 
 @respx.mock
+def test_authors_get_by_slug():
+    respx.get("https://api.pagekit.cc/v1/authors/slug/alice").mock(
+        return_value=httpx.Response(200, json={"id": "a1", "name": "Alice", "slug": "alice"})
+    )
+    client = Pagekit(api_key=API_KEY)
+    author = client.authors.get_by_slug("alice")
+    assert author.slug == "alice"
+    client.close()
+
+
+@respx.mock
+def test_authors_create():
+    respx.post("https://api.pagekit.cc/v1/authors").mock(
+        return_value=httpx.Response(201, json={"id": "a2", "name": "Bob", "slug": "bob"})
+    )
+    from pagekit import AuthorCreateInput
+
+    client = Pagekit(api_key=API_KEY)
+    author = client.authors.create(AuthorCreateInput(name="Bob"))
+    assert author.name == "Bob"
+    client.close()
+
+
+@respx.mock
+def test_authors_update():
+    respx.patch("https://api.pagekit.cc/v1/authors/a1").mock(
+        return_value=httpx.Response(200, json={"id": "a1", "name": "Alice", "bio": "Editor"})
+    )
+    from pagekit import AuthorUpdateInput
+
+    client = Pagekit(api_key=API_KEY)
+    author = client.authors.update("a1", AuthorUpdateInput(bio="Editor"))
+    assert author.bio == "Editor"
+    client.close()
+
+
+@respx.mock
 def test_categories_list():
     respx.get("https://api.pagekit.cc/v1/categories").mock(
         return_value=httpx.Response(200, json={"data": [], "pagination": {"page": 1, "limit": 10, "total": 0, "totalPages": 0, "hasNextPage": False, "hasPreviousPage": False}})

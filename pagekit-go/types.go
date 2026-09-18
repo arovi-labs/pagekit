@@ -26,11 +26,31 @@ type SEO struct {
 type Author struct {
 	ID        string     `json:"id"`
 	Name      string     `json:"name"`
+	Slug      *string    `json:"slug,omitempty"`
+	UserID    *string    `json:"userId,omitempty"`
 	Email     *string    `json:"email,omitempty"`
 	Bio       *string    `json:"bio,omitempty"`
 	AvatarURL *string    `json:"avatarUrl,omitempty"`
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
+}
+
+type AuthorCreateInput struct {
+	Name      string  `json:"name"`
+	Slug      *string `json:"slug,omitempty"`
+	UserID    *string `json:"userId,omitempty"`
+	Email     *string `json:"email,omitempty"`
+	Bio       *string `json:"bio,omitempty"`
+	AvatarURL *string `json:"avatarUrl,omitempty"`
+}
+
+type AuthorUpdateInput struct {
+	Name      *string `json:"name,omitempty"`
+	Slug      *string `json:"slug,omitempty"`
+	UserID    *string `json:"userId,omitempty"`
+	Email     *string `json:"email,omitempty"`
+	Bio       *string `json:"bio,omitempty"`
+	AvatarURL *string `json:"avatarUrl,omitempty"`
 }
 
 type AuthorRef struct {
