@@ -32,7 +32,7 @@ Add your API key to `.env.local`:
 
 ```env
 PAGEKIT_API_KEY=pk_live_...
-PAGEKIT_API_URL=https://api.pagekit.app/v1  # optional, defaults to hosted API
+PAGEKIT_API_URL=https://api.pagekit.cc/v1  # optional, defaults to hosted API
 ```
 
 ### 2. Fetch Content in Server Components
@@ -144,7 +144,7 @@ import { createPageKit, getPosts } from "@arovi/pagekit-next";
 
 const pagekit = createPageKit({
   apiKey: "pk_live_...",
-  baseUrl: "https://api.pagekit.app/v1",
+  baseUrl: "https://api.pagekit.cc/v1",
 });
 
 // Pass as second argument to any getter
@@ -353,7 +353,7 @@ export function DraftPreview({ draftId }: { draftId: string }) {
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `PAGEKIT_API_KEY` | Yes* | - | Your PageKit API key |
-| `PAGEKIT_API_URL` | No | `https://api.pagekit.app/v1` | API base URL |
+| `PAGEKIT_API_URL` | No | `https://api.pagekit.cc/v1` | API base URL |
 
 *Only optional if using `createPageKit()` explicitly.
 

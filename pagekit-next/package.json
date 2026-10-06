@@ -33,7 +33,7 @@
     "clean": "rm -rf dist .turbo"
   },
   "dependencies": {
-    "@arovi/pagekit-core": "^0.1.0"
+    "@arovi/pagekit-core": "workspace:*"
   },
   "peerDependencies": {
     "next": ">=14"

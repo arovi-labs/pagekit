@@ -62,7 +62,7 @@ import { Pagekit } from "@arovi/pagekit-core";
 
 const pagekit = new Pagekit({
   apiKey: "pk_live_...",                           // Required - your API key
-  baseUrl: "https://api.pagekit.app/v1",          // Optional - defaults to hosted API
+  baseUrl: "https://api.pagekit.cc/v1",          // Optional - defaults to hosted API
   timeout: 30000,                                  // Optional - request timeout in ms
   fetch: customFetch,                              // Optional - custom fetch implementation
   headers: { "X-Custom-Header": "value" },        // Optional - additional headers
@@ -74,7 +74,7 @@ const pagekit = new Pagekit({
 | Option | Type | Required | Default | Description |
 |--------|------|----------|---------|-------------|
 | `apiKey` | `string` | Yes | - | Your PageKit API key (`pk_live_...`) |
-| `baseUrl` | `string` | No | `https://api.pagekit.app/v1` | API base URL |
+| `baseUrl` | `string` | No | `https://api.pagekit.cc/v1` | API base URL |
 | `timeout` | `number` | No | `30000` | Request timeout in milliseconds |
 | `fetch` | `typeof fetch` | No | `globalThis.fetch` | Custom fetch implementation (useful for tests) |
 | `headers` | `Record<string, string>` | No | `{}` | Additional headers for all requests |

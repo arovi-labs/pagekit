@@ -91,7 +91,7 @@ describe("Pagekit", () => {
       await client.request("/test");
 
       expect(fetch).toHaveBeenCalledWith(
-        "https://api.pagekit.app/v1/test",
+        "https://api.pagekit.cc/v1/test",
         expect.objectContaining({
           headers: expect.objectContaining({
             Authorization: "Bearer pk_test_123",

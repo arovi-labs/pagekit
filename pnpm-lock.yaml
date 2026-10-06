@@ -69,8 +69,8 @@ importers:
   pagekit-next:
     dependencies:
       '@arovi/pagekit-core':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: workspace:*
+        version: link:../pagekit-typescript
     devDependencies:
       '@types/node':
         specifier: ^22.10.0
@@ -95,9 +95,6 @@ importers:
         version: 3.2.7(@types/node@22.20.2)(tsx@4.23.13)(yaml@2.9.1)
 
 packages:
-
-  '@arovi/pagekit-core@0.1.0':
-    resolution: {integrity: sha512-lh4Q818cUJYak9R8oCc/ehR4e7MWljCYtA3Mmv7C0F5Q+0JoRibWvOF3LM/hg52B94ncm65JHszXnKFUl2FmuA==}
 
   '@changesets/apply-release-plan@8.1.1':
     resolution: {integrity: sha512-nk2Hbq3M9NeHMdaIRBDvawKrQJzXB9sGyBUE5yWnIKtvdcNCPj75zBekJYr0gTT2ecJH3eFeTrc8eisPImcv0Q==}
@@ -1959,8 +1956,6 @@ packages:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
 snapshots:
-
-  '@arovi/pagekit-core@0.1.0': {}
 
   '@changesets/apply-release-plan@8.1.1':
     dependencies:

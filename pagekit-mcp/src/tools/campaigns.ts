@@ -23,7 +23,7 @@ Example: pagekit_list_campaigns()`,
             camp.subject ? `Subject: ${camp.subject}` : null,
             camp.scheduledFor ? `Scheduled: ${camp.scheduledFor}` : null,
             camp.sentAt ? `Sent: ${camp.sentAt}` : null,
-          ].filter(Boolean);
+          ].filter((s): s is string => s !== null);
         });
         return ok(res, md);
       } catch (e) { return err(e); }

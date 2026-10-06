@@ -24,7 +24,7 @@ export interface PagekitOptions {
   headers?: Record<string, string>;
 }
 
-export const DEFAULT_BASE_URL = "https://api.pagekit.app/v1";
+export const DEFAULT_BASE_URL = "https://api.pagekit.cc/v1";
 
 export class Pagekit implements HttpClient {
   readonly apiKey: string;
