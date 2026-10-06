@@ -158,7 +158,7 @@ export interface Notification {
   createdAt: string;
 }
 
-/** Shape returned by the API - matches PRD §17. */
+/** Shape returned by the API - matches PRD 17. */
 export interface Post {
   id: string;
   title: string;
